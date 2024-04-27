@@ -25,9 +25,9 @@ Dua, D. and Graff, C. (2019). UCI Machine Learning Repository. Irvine, CA: Unive
 ### Dataset Source (fcc-forum-pageviews.csv)
 [freeCodeCamp](https://freecodecam-boilerplate-83vyiajcs57.ws-eu110.gitpod.io/)
 ### Can be imported as a module
-* draw_line_plot:
-* draw_bar_plot:
-* draw_box_plot:
+* draw_line_plot: Plots time against daily page views.
+* draw_bar_plot: Illustrates average page views per day in each month in each year in a barplot.
+* draw_box_plot: Illustrates page views per day per year and per month in a boxplot.
 ### Can be used from the command line
 * python time_series_visualizer.py
 
