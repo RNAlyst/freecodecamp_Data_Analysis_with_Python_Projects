@@ -30,3 +30,11 @@ Dua, D. and Graff, C. (2019). UCI Machine Learning Repository. Irvine, CA: Unive
 * draw_box_plot:
 ### Can be used from the command line
 * python time_series_visualizer.py
+
+## sea_level_predictor.py
+### Dataset Source (epa-sea-level.csv)
+[freeCodeCamp](https://freecodecam-boilerplate-wj5jfmy0h7d.ws-eu110.gitpod.io/)
+### Can be imported as a module
+* draw_plot: Illustrates the rise in sea level.
+### Can be used from the command line
+* python sea_level_predictor.py
