@@ -20,7 +20,7 @@ def calculate_demographic_data( print_data: bool = True, filepath: str = "adult.
         'race_count':               # Pandas Series with number of each race
         'average_age_men':          # Average age of men
         'percentage_bachelors':     # Percentage with Bachelors degrees
-        'higher_education_rich':    # Percentag that earn >50K among people with higher education
+        'higher_education_rich':    # Percentage that earn >50K among people with higher education
         'lower_education_rich':     # Percentage that earn >50K among people without higher education
         'min_work_hours':           # Min work time in hrs per week
         'rich_percentage':          # Percentage of rich among those who work fewest hours
