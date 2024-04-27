@@ -20,8 +20,8 @@ def calculate_demographic_data( print_data: bool = True, filepath: str = "adult.
         'race_count':               # Pandas Series with number of each race
         'average_age_men':          # Average age of men
         'percentage_bachelors':     # Percentage with Bachelors degrees
-        'higher_education_rich':    # Percentage with higher education that earn >50K
-        'lower_education_rich':     # Percentage without higher education that earn >50K
+        'higher_education_rich':    # Percentag that earn >50K among people with higher education
+        'lower_education_rich':     # Percentage that earn >50K among people without higher education
         'min_work_hours':           # Min work time in hrs per week
         'rich_percentage':          # Percentage of rich among those who work fewest hours
         'highest_earning_country':              # Country with highest percentage of rich people
@@ -51,10 +51,10 @@ def calculate_demographic_data( print_data: bool = True, filepath: str = "adult.
     mask_higher_education = (df['education'] == 'Bachelors') | (df['education'] == 'Masters') | (df['education'] == 'Doctorate' )
     mask_lower_education = (df['education'] != 'Bachelors') & (df['education'] != 'Masters') & (df['education'] != 'Doctorate' )
 
-    # Percentage with or without higher education that earn >50K
+    # Percentage that earn over 50K among the people with or withouth higher education
     df_rich = df[ df['salary'] == '>50K' ]
-    higher_education_rich = round( df_rich['education'][ mask_higher_education].shape[0] / tot * 100, 1 )
-    lower_education_rich = round( df_rich['education'][mask_lower_education].shape[0] / tot * 100, 1 )
+    higher_education_rich = round( df_rich['education'][ mask_higher_education].shape[0] / df['education'][ mask_higher_education].shape[0] * 100, 1 )
+    lower_education_rich = round( df_rich['education'][mask_lower_education].shape[0] / df['education'][mask_lower_education].shape[0] * 100, 1 )
 
     # Min work time in hrs per week
     min_work_hours = df['hours-per-week'].min()
