@@ -20,3 +20,13 @@ Dua, D. and Graff, C. (2019). UCI Machine Learning Repository. Irvine, CA: Unive
 * draw_heat_map: Creates a heat map correlating all categories of the medical data.
 ### Can be used from the command line
 * python medical_data_visualizer.py
+
+## time_series_visualizer.py
+### Dataset Source (fcc-forum-pageviews.csv)
+[freeCodeCamp](https://freecodecam-boilerplate-83vyiajcs57.ws-eu110.gitpod.io/)
+### Can be imported as a module
+* draw_line_plot:
+* draw_bar_plot:
+* draw_box_plot:
+### Can be used from the command line
+* python time_series_visualizer.py
