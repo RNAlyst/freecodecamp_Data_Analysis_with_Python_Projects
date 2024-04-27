@@ -22,7 +22,7 @@ df.index = pd.to_datetime(df.index)
 
 # Functions 
 def draw_line_plot():
-
+    '''Plots time against daily page views.'''    
     # Create a figure with a specified size
     fig = plt.figure(figsize=(10, 5))
 
@@ -32,16 +32,20 @@ def draw_line_plot():
     # Plot data onto the axes
     ax.plot(df.index, df, color='red')
 
+    plt.title('Daily freeCodeCamp Forum Page Views 5/2016-12/2019')
+    plt.xlabel('Date')
+    plt.ylabel('Page Views')
+
     # Save image and return fig (don't change this part)
     fig.savefig('line_plot.png')
     
     return fig
 
 def draw_bar_plot():
-
+    '''Illustrates average page views per day in each month in each year in a barplot.'''
     # constants
     MONTH_ORDER = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    CUSTOM_PALETTE = ['#ff0000', '#ff8000', '#ffff00', '#80ff00', '#00ff00', '#00ff80', '#00ffff', '#0080ff', '#0000ff', '#8000ff', '#ff00ff', '#ff0080', ]  # Example custom palette 
+    CUSTOM_PALETTE = ['#ff0000', '#ff8000', '#ffff00', '#80ff00', '#00ff00', '#00ff80', '#00ffff', '#0080ff', '#0000ff', '#8000ff', '#ff00ff', '#ff0080', ]  # Rainbow custom palette 
     
     # group df by month
     df_monthly = df.copy()
@@ -56,8 +60,8 @@ def draw_bar_plot():
 
     # create and modify barplot
     fig = sns.catplot( data=df_monthly, kind='bar', x='Year', y='value', hue='Month', hue_order=MONTH_ORDER, palette= CUSTOM_PALETTE )
-    plt.xlabel('Year') # Adding xlabel
-    plt.ylabel('Average Page Views per Day') # Adding ylabel
+    plt.xlabel('Years') # Adding xlabel
+    plt.ylabel('Average Page Views') # Adding ylabel
     plt.show()
 
     # Save image and return fig
@@ -65,10 +69,10 @@ def draw_bar_plot():
     return fig
 
 def draw_box_plot():
-
+    '''Illustrates page views per day per year and per month in a boxplot.'''
     # Constants
     MONTH_ORDER = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    CUSTOM_PALETTE = ['#ff0000', '#ff8000', '#ffff00', '#80ff00', '#00ff00', '#00ff80', '#00ffff', '#0080ff', '#0000ff', '#8000ff', '#ff00ff', '#ff0080', ]
+    CUSTOM_PALETTE = ['#ff0000', '#ff8000', '#ffff00', '#80ff00', '#00ff00', '#00ff80', '#00ffff', '#0080ff', '#0000ff', '#8000ff', '#ff00ff', '#ff0080', ] # Rainbow custom palette
 
     # Prepare data for box plots
     df_box = df.copy()
@@ -89,8 +93,8 @@ def draw_box_plot():
 
     # Customize axes and titile
     axes[0].set_xlabel('Year')
-    axes[0].set_ylabel('Daily Page Views')
-    axes[0].set_title('Boxplot of Daily Page Views by Year')
+    axes[0].set_ylabel('Page Views')
+    axes[0].set_title('Year-wise Box Plot (Trend)')
 
     # Plot the second boxplot on the right subplot
     sns.boxplot(
@@ -103,8 +107,8 @@ def draw_box_plot():
     )
     # Customize axes and title
     axes[1].set_xlabel('Month')
-    axes[1].set_ylabel('Daily Page Views')
-    axes[1].set_title('Boxplot of Daily Page Views by Month')
+    axes[1].set_ylabel('Page Views')
+    axes[1].set_title('Month-wise Box Plot (Seasonality)')
 
     # Adjust layout and show the plot
     plt.tight_layout()
@@ -113,3 +117,9 @@ def draw_box_plot():
     # Save image and return fig (don't change this part)
     fig.savefig('box_plot.png')
     return fig
+
+# Code
+if __name__ == '__main__':
+    fig_1 = draw_line_plot()
+    fig_2 = draw_bar_plot()
+    fig_3 = draw_box_plot()
