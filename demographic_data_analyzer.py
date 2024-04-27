@@ -120,7 +120,7 @@ def dict2csv( dictionary: dict ) -> None:
 if __name__ == '__main__':
 
     if len(sys.argv)!= 2:
-        print("Usage: python myscript.py <filename>")
+        print("Usage: python demographic_data_analyzer.py <filename>")
 
     elif not os.path.isfile(sys.argv[1]):
         print(f"Error: The file '{sys.argv[1]}' does not exist.")
